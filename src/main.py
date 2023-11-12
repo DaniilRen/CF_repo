@@ -1,5 +1,7 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from game.utils import character_create, move
+from autogame.game import autogame
+import numpy as np
 
 
 def game():
@@ -17,5 +19,19 @@ def game():
 		print(f'{warrior1.name} выиграл!')
 
 
+def main():
+	mode = input('Игру можно запустить в режиме одного матча с выбором персонажей и оружия (1) или в режиме случайного подбора с выводом статистики через matplotlib (2). Как вы хотите запустить игру (1/2)?: ').strip()
+	if mode == '1':
+		game()
+	elif mode == '2':
+		statistics = autogame()
+		print(f"Первый воин выиграл: {statistics.count(1)} раз, Второй воин выиграл: {statistics.count(2)} раз")
+		fig = plt.figure(figsize=(2, 5))
+		ax = fig.add_subplot()
+		y = statistics
+		ax.hist(y)
+		ax.grid()
+		plt.show()
 
-print(game())
+			
+main()
