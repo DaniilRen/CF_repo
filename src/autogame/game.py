@@ -49,7 +49,7 @@ def move(attacking_warrior, defense_warrior):
 
 def autogame():
 	wins = []
-	for _ in range(20):
+	for _ in range(25):
 		warrior1, warrior2 = character_create()
 		cnt = 1
 		while warrior1.stamina > 0 and warrior2.stamina > 0:
