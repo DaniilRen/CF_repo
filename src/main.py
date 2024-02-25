@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from game.utils import character_create, move
 from autogame.game import autogame
-import numpy as np
 
 
 def game():
