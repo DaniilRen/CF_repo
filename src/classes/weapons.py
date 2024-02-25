@@ -1,12 +1,16 @@
 import random
+import abc
 
-class Weapon:
+class Weapon(abc.ABC):
+	@abc.abstractclassmethod
 	def __init__(self, type) -> None:
 		self.type = type
 	
+	@abc.abstractclassmethod
 	def light_attack():
 		pass
 	
+	@abc.abstractclassmethod
 	def heavy_attack():
 		pass
 
